@@ -1,0 +1,179 @@
+/* Import google API fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+body {
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+/* Titles */
+.form-title, .info-details, .fill-form{
+    padding: 10px;
+    border-bottom: solid 1px #eee;
+    background-color: white;
+    font-family: 'Libre Franklin', sans-serif;
+
+}
+.form-details{
+    border-bottom: solid 2px #eee;
+    background-color: white;
+    padding-top: 10px !important;
+}
+
+.bc-g{
+    background: #363940;
+}
+
+.form-title span{
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 0px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.info-details p, .form-details span {
+    color: #363940;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+.form-details span{
+    color: #fff;
+    font-size: 18px !important;
+}
+
+/* Style for Form Inputs*/
+.form_item {
+    display: flex;
+    flex-direction: column;
+}
+
+
+form .form_label{
+    font-weight: 400 !important;
+    padding-top: 10px;
+    font-size: 16px;
+    padding-bottom: 0px;
+}
+
+form .form_input{
+    -webkit-appearance: none;
+    width: 100%;
+
+    /* Fix for Safari/iOS date Fields */
+    min-height: calc(0.9em + (0.2 *2) + 0.6em);
+
+    padding: 0.5em;
+    font-size: 1.0em;
+    font-family: 'Libre Franklin', sans-serif;
+    border: 2px solid #363940;
+    border-radius: 4px;
+    background: #f9f9f9;
+}
+
+.form_input:focus {
+    background: #ffffff;
+}
+
+.form_input::placeholder{
+    color: #a19c9c;
+}
+
+
+textarea.form_input {
+    resize: none;
+    min-height: 200px;
+}
+
+.mg-b{
+    margin-bottom: 25px;
+}
+.submit{
+    font-weight: 700;
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 25px;
+    background: #363940;
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* Collapse Section */
+.accordion-warp .accordion-header{
+    width: 100%;
+    height: 80px;
+    background: #969b8a;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom: 2px solid #fff;
+    position: relative;
+    cursor: pointer;
+    font: 'Libre Franklin', sans-serif;
+}
+.accordion-warp:first-child .accordion-header{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.accordion-warp:last-child .accordion-header{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom: 2px solid transparent;
+}
+
+.accordion-warp .accordion-header:hover:before,
+.accordion-warp .accordion-header:hover:after{
+    background: #fff;
+}
+.accordion-warp:last-child .accordion-header:hover{
+    border-bottom: 2px solid transparent;
+}
+.accordion-warp .accordion-header:before,
+.accordion-warp .accordion-header:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    width: 20px;
+    height: 1.5px;
+    background: #fff;
+}
+.accordion-warp .accordion-header:after{
+    transform: rotate(-90deg);
+    transition: all 0.5s ease;
+}
+.accordion-warp .accordion-body{
+    width: 100%;
+    height: 0px;
+    transition: all 0.5s ease;
+    background: white;
+    overflow: hidden;
+}
+.accordion-warp .accordion-body p{
+    padding: 15px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #333;
+}
+
+
+.accordion-warp:last-child .accordion-header.active{
+    border-bottom: 2px solid #fff;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.accordion-warp .accordion-header.active:before,
+.accordion-warp .accordion-header.active:after{
+    background: #fff;
+}
+
+.accordion-warp .accordion-header.active:after{
+    transform: rotate(0);
+}
+
+.accordion-warp .accordion-header.active + .accordion-body{
+    height: 140px;
+}

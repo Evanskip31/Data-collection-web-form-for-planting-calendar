@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZhP_mwsdzM5X-lJ8YNOIotgmkplUj5ew&callback=initMap&libraries=places&v=weekly" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".accordion-header").click(function(){
+        $(".accordion-header").removeClass("active");
+        $(this).addClass("active");
+        })
+    });
+    
+    </script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>Data Entry Form</title>
+</head>
+<body onload="validDate()">
+    <!--Form Section-->
+    <form method="POST" id="myForm" onsubmit="return checkValidity()">
+        <div class="container">
+            <div class="row h_20">
+                <div class="wrap">
+                    <!--Head / Title Section-->
+                    <div class="form-title bc-g col-md-12">
+                        <b><span >Data Entry Form for Planting Calendars </span></b>
+                        
+                    </div>
+                    <!--End of Head / Title Section-->
+                </div>
+            </div>
+            <div class="row">
+                <!--Information details Section-->
+                <div class="info-details col-md-12">
+                    <p>
+                        <span>By submitting your planting information throughout your gardening seasons, you can help other gardeners answer the popular and repetitive questions like "When do I start tomato seeds indoors?" and "When can I plant peppers outdoors?" The key to this data is your location!<br><br>
+                            Please bookmark this page and continue to submit your planting information each year! This process will only be helpful if we can get a large number of people to submit their information regularly! Please share this page as much as possible.<br><br>
+                        <b>As a thank you for submitting your data, we will be giving away a $10 gift card each month to the seed/gardening store of your choice! Your email is required in order for you to win. Each entry you save for each plant counts as an entry in the drawing for that month!</b><br><br>
+                            The planting maps/charts are coming soon and highly depend on YOU to enter your valuable information. A link will appear here once we have enough data to show.</span>
+                    </p>
+                </div>
+                <!--End of Information details Section-->
+            </div>
+            <!-- Details About Crop -->
+            <div class="row">
+                <div class="form-details bc-g col-md-12">
+                    <b><span >Enter Details About Crop </span></b>
+                </div>
+            </div>
+            <div class="row fill-form">
+                <!--Vegetable Planted Section-->
+                <div class="form_item col-md-6 mg-b">
+                    <label for="veg_planted" class="form_label">Vegetable Planted<span>*</span></label>
+                    <select name="veg_planted" id="veg_planted" class="form_input" required>
+                        <option selected disabled>Choose a plant from the list</option>
+                        <option value="Agastache - Hyssop">Agastache - Hyssop</option>
+                        <option value="Ageratum">Ageratum</option>
+                        <option value="Amaranth">Amaranth</option>
+                        <option value="Artichoke">Artichoke</option>
+                        <option value="Arugula">Arugula</option>
+                        <option value="Asparagus">Asparagus</option>
+                        <option value="Asters">Asters</option>
+                        <option value="Baby's Breath">Baby's Breath</option>
+                        <option value="Bachelor's Button">Bachelor's Button</option>
+                        <option value="Balloon Flower">Balloon Flower</option>
+                        <option value="Balm">Balm</option>
+                        <option value="Balsam">Balsam</option>
+                        <option value="Basil">Basil</option>
+                        <option value="Beans">Beans</option>
+                        <option value="Bee Balm">Bee Balm</option>
+                        <option value="Beetroot">Beetroot</option>
+                        <option value="Bells Of Ireland">Bells Of Ireland</option>
+                        <option value="Berry">Berry</option>
+                        <option value="Bitter Melon">Bitter Melon</option>
+                        <option value="Black-Eyed Susan Vine">Black-Eyed Susan Vine</option>
+                        <option value="Bok Choy/Tatsoi">Bok Choy/Tatsoi</option>
+                        <option value="Borage">Borage</option>
+                        <option value="Broccoli">Broccoli</option>
+                        <option value="Brussels Sprouts">Brussels Sprouts</option>
+                        <option value="Buckwheat">Buckwheat</option>
+                        <option value="Burdock">Burdock</option>
+                        <option value="Butterfly Pea">Butterfly Pea</option>
+                        <option value="Cabbage">Cabbage</option>
+                        <option value="Cactus">Cactus</option>
+                        <option value="Calendula">Calendula</option>
+                        <option value="Canterbury Bells">Canterbury Bells</option>
+                        <option value="Caraway">Caraway</option>
+                        <option value="Cardoon">Cardoon</option>
+                        <option value="Carnations">Carnations</option>
+                        <option value="Carrots">Carrots</option>
+                        <option value="Catnip">Catnip</option>
+                        <option value="Cauliflower">Cauliflower</option>
+                        <option value="Celeriac">Celeriac</option>
+                        <option value="Celery">Celery</option>
+                        <option value="Celosia">Celosia</option>
+                        <option value="Chamomile">Chamomile</option>
+                        <option value="Cherry">Cherry</option>
+                        <option value="Chervil">Chervil</option>
+                        <option value="Chicory">Chicory</option>
+                        <option value="Chinese Cabbage">Chinese Cabbage</option>
+                        <option value="Chives">Chives</option>
+                        <option value="Chrysanthemum">Chrysanthemum</option>
+                        <option value="Cilantro/Coriander">Cilantro/Coriander</option>
+                        <option value="Clover">Clover</option>
+                        <option value="Cockscomb">Cockscomb</option>
+                        <option value="Coleus">Coleus</option>
+                        <option value="Collards">Collards</option>
+                        <option value="Coreopsis">Coreopsis</option>
+                        <option value="Corn">Corn</option>
+                        <option value="Corn Salad">Corn Salad</option>
+                        <option value="Cosmos">Cosmos</option>
+                        <option value="Cowpeas">Cowpeas</option>
+                        <option value="Crocus Bulbs">Crocus Bulbs</option>
+                        <option value="Cucumbers">Cucumbers</option>
+                        <option value="Cumin">Cumin</option>
+                        <option value="Daffodil Bulbs">Daffodil Bulbs</option>
+                        <option value="Dahlia">Dahlia</option>
+                        <option value="Daisy">Daisy</option>
+                        <option value="Dandelion">Dandelion</option>
+                        <option value="Dianthus">Dianthus</option>
+                        <option value="Dill">Dill</option>
+                        <option value="Dock/Sorrel">Dock/Sorrel</option>
+                        <option value="Echinacea">Echinacea</option>
+                        <option value="Eggplant">Eggplant</option>
+                        <option value="Elecampane">Elecampane</option>
+                        <option value="Endive">Endive</option>
+                        <option value="Escarole">Escarole</option>
+                        <option value="Eucalyptus">Eucalyptus</option>
+                        <option value="Fennel">Fennel</option>
+                        <option value="Fenugreek">Fenugreek</option>
+                        <option value="Feverfew">Feverfew</option>
+                        <option value="Flax">Flax</option>
+                        <option value="Four O'Clock's">Four O'Clock's</option>
+                        <option value="Gaillardia">Gaillardia</option>
+                        <option value="Garlic">Garlic</option>
+                        <option value="Gilia">Gilia</option>
+                        <option value="Goji Berries">Goji Berries</option>
+                        <option value="Gomphrena">Gomphrena</option>
+                        <option value="Gourds">Gourds</option>
+                        <option value="Heliopsis">Heliopsis</option>
+                        <option value="Heliotrope">Heliotrope</option>
+                        <option value="Hollyhock">Hollyhock</option>
+                        <option value="Honeywort">Honeywort</option>
+                        <option value="Horehound">Horehound</option>
+                        <option value="Huckleberries">Huckleberries</option>
+                        <option value="Hyacinth Bulbs">Hyacinth Bulbs</option>
+                        <option value="Iceplant">Iceplant</option>
+                        <option value="Jelly Melon">Jelly Melon</option>
+                        <option value="Kale">Kale</option>
+                        <option value="Kiss Me Over The Garden Gate">Kiss Me Over The Garden Gate</option>
+                        <option value="Kohlrabi">Kohlrabi</option>
+                        <option value="Lavender">Lavender</option>
+                        <option value="Leeks">Leeks</option>
+                        <option value="Lemongrass">Lemongrass</option>
+                        <option value="Lettuce">Lettuce</option>
+                        <option value="Lion's Ear or Klip Dagga">Lion's Ear or Klip Dagga</option>
+                        <option value="Lovage">Lovage</option>
+                        <option value="Love In A Mist">Love In A Mist</option>
+                        <option value="Marigolds">Marigolds</option>
+                        <option value="Marjoram">Marjoram</option>
+                        <option value="Marshmallow">Marshmallow</option>
+                        <option value="Melons">Melons</option>
+                        <option value="Mibuna">Mibuna</option>
+                        <option value="Milkweed">Milkweed</option>
+                        <option value="Mint">Mint</option>
+                        <option value="Mizuna">Mizuna</option>
+                        <option value="Moonflower">Moonflower</option>
+                        <option value="Moringa">Moringa</option>
+                        <option value="Morning Glory">Morning Glory</option>
+                        <option value="Motherwort">Motherwort</option>
+                        <option value="Mullein">Mullein</option>
+                        <option value="Mustard">Mustard</option>
+                        <option value="Nasturtium">Nasturtium</option>
+                        <option value="Nicotiana">Nicotiana</option>
+                        <option value="Okra">Okra</option>
+                        <option value="Onions">Onions</option>
+                        <option value="Orach">Orach</option>
+                        <option value="Oregano">Oregano</option>
+                        <option value="Oyster Leaf">Oyster Leaf</option>
+                        <option value="Pansy/Viola">Pansy/Viola</option>
+                        <option value="Parsley">Parsley</option>
+                        <option value="Parsnips">Parsnips</option>
+                        <option value="Peanuts">Peanuts</option>
+                        <option value="Peas">Peas</option>
+                        <option value="Peppers">Peppers</option>
+                        <option value="Perilla">Perilla</option>
+                        <option value="Petunia">Petunia</option>
+                        <option value="Phlox">Phlox</option>
+                        <option value="Plantain">Plantain</option>
+                        <option value="Poppy">Poppy</option>
+                        <option value="Portulaca">Portulaca</option>
+                        <option value="Potatoes">Potatoes</option>
+                        <option value="Purslane">Purslane</option>
+                        <option value="Quinoa">Quinoa</option>
+                        <option value="Radicchio">Radicchio</option>
+                        <option value="Radishes">Radishes</option>
+                        <option value="Rhubarb">Rhubarb</option>
+                        <option value="Rosemary">Rosemary</option>
+                        <option value="Rudbeckia">Rudbeckia</option>
+                        <option value="Rutabagas">Rutabagas</option>
+                        <option value="Safflower">Safflower</option>
+                        <option value="Sage">Sage</option>
+                        <option value="Saint John's Wort">Saint John's Wort</option>
+                        <option value="Salad Blends">Salad Blends</option>
+                        <option value="Salad Burnet">Salad Burnet</option>
+                        <option value="Salpiglossis">Salpiglossis</option>
+                        <option value="Salsify">Salsify</option>
+                        <option value="Salvia">Salvia</option>
+                        <option value="Savory">Savory</option>
+                        <option value="Snail Vine">Snail Vine</option>
+                        <option value="Snake Bean">Snake Bean</option>
+                        <option value="Snapdragon">Snapdragon</option>
+                        <option value="Sorghum">Sorghum</option>
+                        <option value="Spinach">Spinach</option>
+                        <option value="Spring Dahlia Bulbs">Spring Dahlia Bulbs</option>
+                        <option value="Squash, Summer">Squash, Summer</option>
+                        <option value="Squash, Winter">Squash, Winter</option>
+                        <option value="Statice">Statice</option>
+                        <option value="Stevia">Stevia</option>
+                        <option value="Stinging Nettle">Stinging Nettle</option>
+                        <option value="Stocks">Stocks</option>
+                        <option value="Strawberries">Strawberries</option>
+                        <option value="Strawflower">Strawflower</option>
+                        <option value="Sunflower">Sunflower</option>
+                        <option value="Sweet Alyssum">Sweet Alyssum</option>
+                        <option value="Sweet Peas">Sweet Peas</option>
+                        <option value="Swiss Chard">Swiss Chard</option>
+                        <option value="Tansy">Tansy</option>
+                        <option value="Thyme">Thyme</option>
+                        <option value="Tomatillo">Tomatillo</option>
+                        <option value="Tomatoes">Tomatoes</option>
+                        <option value="Toothache Plant">Toothache Plant</option>
+                        <option value="Tulip Bulbs">Tulip Bulbs</option>
+                        <option value="Turnips">Turnips</option>
+                        <option value="Valerian">Valerian</option>
+                        <option value="Wallflower">Wallflower</option>
+                        <option value="Water Cress">Water Cress</option>
+                        <option value="Watermelon">Watermelon</option>
+                        <option value="Wax Melon">Wax Melon</option>
+                        <option value="Wheat">Wheat</option>
+                        <option value="Yarrow">Yarrow</option>
+                        <option value="Zinnias">Zinnias</option>
+                    </select>
+                </div>
+                <!--End of Vegetable Planted Section-->
+
+                <!--Date Planted Section-->
+                <div class="form_item col-md-6 mg-b">
+                    <label for="date" class="form_label">Date Planted<span>*</span></label>
+                    <input type="date" name="date" id="date_planted" class="form_input" required />
+                </div>
+                <!--End of Date Planted Section-->
+
+                <!--Planting Technique Section-->
+                <div class="form_item col-md-6 mg-b">
+                    <label for="planting_tech" class="form_label">Planting Technique<span>*</span></label>
+                    <select name="planting_tech" id="planting_tech" class="form_input" required>
+                        <option selected disabled>Choose a Planting Technique</option>
+                        <option value="Indoors from Seed">Indoors from Seed</option>
+                        <option value="Outdoors from seed (no cover protection)">Outdoors from seed (no cover protection)</option>
+                        <option value="Outdoors from seed (with cover protection)">Outdoors from seed (with cover protection)</option>
+                        <option value="Outdoors from transplants (no cover protection)">Outdoors from transplants (no cover protection)</option>
+                        <option value="Outdoors from transplants (with cover protection)">Outdoors from transplants (with cover protection)</option>
+                    </select>
+                </div>
+                <!--End of Planting Technique Section-->
+
+                <!--Gardening Experience Section-->
+                <div class="form_item col-md-6 mg-b">
+                    <label for="experience" class="form_label">Years of Gardening Experience<span>*</span></label>
+                    <select name="experience" id="experience" class="form_input" required>
+                        <option selected disabled>Select an Experience Level</option>
+                        <option value="0-2 Years">0-2 Years</option>
+                        <option value="3-5 Years">3-5 Years</option>
+                        <option value="6-10 Years">6-10 Years</option>
+                        <option value="10+ Years">10+ Years</option>
+                    </select>
+                </div>
+                <!--End of Gardening Experience Section-->
+
+                <!--Address Section-->
+                <div class="form_item col-md-6 mg-b">
+                    <label for="address" class="form_label">Location<span>*</span></label>
+                    <input type="address" class="form_input" name="address" id="location-input" placeholder="Enter Address of Area where Crop was Planted" required>
+                </div>
+                <!--End of Address Section-->
+
+                <!--Advice / Tip for the plant Section-->
+                <div class="form_item col-md-12 mg-b">
+                    <label for="messase" class="form_label">Most Important Advice / Tip for this Plant</label>
+                    <textarea name="message" id="message" cols="30" rows="4" class="form_input message" placeholder="Enter Message"></textarea>
+                </div>
+                <!--End of Advice / Tip for the plant Section-->
+            </div>
+            <!--End of Details about crops-->
+
+            <!--Personal Details-->
+            <div class="row">
+                <div class="form-details bc-g col-md-12">
+                    <b><span >Personal Details </span></b>
+                </div>
+            </div>
+            <div class="row fill-form">
+                <div class="form_item col-md-6 mg-b">
+                    <label for="your_name" class="form_label">Your Name</label>
+                    <input type="text" class="form_input" name="your_name" id="your_name" placeholder="Enter your Name">
+                </div>
+                <div class="form_item col-md-6 mg-b">
+                    <label for="email" class="form_label">Your Email</label>
+                    <input type="email" class="form_input" name="email" id="email" placeholder="Enter your Email">
+                </div>
+            </div>
+            <!--End of Personal Details-->
+
+            <!--Form Submit Section-->
+            <div class="row fill-form">
+                <input name="submit" type="submit" id="submit" class="submit" value="Submit">
+            </div>
+            <!--End of Form Submit Section-->
+
+            <!-- Frequently Asked Questions Title -->
+            <div class="row mg-b">
+                <div class="form-details bc-g col-md-12">
+                    <b><span >Frequently Asked Questions </span></b>
+                </div>
+            </div>
+            <!-- End of Frequently Asked Questions Title -->
+
+            <!--Frequently Asked Question-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="accordion-warp">
+                        <div class="accordion-header">
+                            My plant doesn’t appear in the list of choices, what should I do?
+                        </div>
+                        <div class="accordion-body">
+                            <p>Please <a href="#">Contact Us</a>  and we will get your item added to the list!</p>
+                        </div>
+                    </div>
+                    <div class="accordion-warp">
+                        <div class="accordion-header">
+                            Where can I find the planting map?
+                        </div>
+                        <div class="accordion-body">
+                            <p>You can view the map of this planting data <a href="#">here</a>!</p>
+                        </div>
+                    </div>
+                    <div class="accordion-warp">
+                        <div class="accordion-header">
+                            How will my email be used?
+                        </div>
+                        <div class="accordion-body">
+                            <p>We will not give out your email to any service or even email you ourselves with any type of subscription or newsletter.  Your email is only used to identify you and put you into a drawing for prizes as a thank you for submitting this helpful information.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-warp">
+                        <div class="accordion-header">
+                            All other questions
+                        </div>
+                        <div class="accordion-body">
+                            <p>Please <a href="#">Contact Us</a> any time for help!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Frequently Asked Question-->
+            <div class="row fill-form">
+                <div class="form-details col-md-12">
+                    <b><span >Foot</span></b>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <!--End of Form Section-->
+
+    <!--Link to Firebase Account-->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    
+    <!--Link to Sweet Alert js CDN-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="form.js"></script>
+    <!-- <script src="places.js"></script> -->
+</body>
+</html>
