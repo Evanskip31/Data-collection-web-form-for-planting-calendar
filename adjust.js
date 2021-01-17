@@ -1,7 +1,7 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
-    apiKey: "AIzaSyCWGL8j9P5IM0yUsZCnU5Sa5WqMcWiTV3Q",
+    apiKey: "AIzaSyCWGL8j9P5U5Sa5WqMcWiTV3Q",
       authDomain: "dndg-planting-calendar.firebaseapp.com",
       databaseURL: "https://dndg-planting-calendar-default-rtdb.firebaseio.com",
       projectId: "dndg-planting-calendar",
@@ -54,7 +54,7 @@ var firebaseConfig = {
             axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
                 params:{
                     address: location,
-                    key: 'AIzaSyCZhP_mwsdzM5X-lJ8YNOIotgmkplUj5ew'
+                    key: 'AIzaSyCZhP_mwsdzM5X-gmkplUj5ew'
                 }
             })
             .then(function(response){
